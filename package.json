@@ -29,7 +29,8 @@
     "lint": "denolint",
     "check": "node test",
     "cover": "c8 node test",
-    "test": "denolint && c8 node test"
+    "test": "denolint && c8 node test",
+    "ci": "c8 node test"
   },
   "c8": {
     "100": true,
