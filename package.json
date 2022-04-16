@@ -1,0 +1,73 @@
+{
+  "name": "storybook-multilevel-sort",
+  "version": "1.0.0",
+  "description": "Applies specific sort order to more than two levels of chapters and stories in a storybook.",
+  "author": "Ferdinand Prantl <prantlf@gmail.com>",
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/storybook-multilevel-sort/blob/master/LICENSE"
+    }
+  ],
+  "homepage": "https://github.com/prantlf/storybook-multilevel-sort#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prantlf/storybook-multilevel-sort.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/storybook-multilevel-sort/issues"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "index.js"
+  ],
+  "type": "module",
+  "scripts": {
+    "lint": "denolint",
+    "check": "node test",
+    "cover": "c8 node test",
+    "test": "denolint && c8 node test"
+  },
+  "c8": {
+    "100": true,
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "failComment": false
+        }
+      ],
+      "@semantic-release/git"
+    ]
+  },
+  "devDependencies": {
+    "@node-rs/deno-lint": "^1.13.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "c8": "^7.11.0",
+    "tehanu": "^0.2.2",
+    "tehanu-repo-coco": "^0.0.2"
+  },
+  "keywords": [
+    "storybook-addons",
+    "storybook-addon",
+    "storybook",
+    "storybookjs",
+    "addon",
+    "sort",
+    "multilevel"
+  ]
+}
