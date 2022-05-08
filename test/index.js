@@ -1,24 +1,28 @@
 import { equal } from 'assert'
 import tehanu from 'tehanu'
-import sort from './index.js'
+import sort from '../lib/index.js'
 
-const test = tehanu('sort')
+const test = tehanu('test/index.js')
 
-test('sort unnamed stories', () => {
+test('exports a function', () => {
+  equal(typeof sort, 'function')
+})
+
+test('sorts unnamed stories', () => {
   const story1 = [null, { kind: '', name: '' }]
   const story2 = [null, { kind: '', name: '' }]
   equal(sort(null, story1, story2), 0)
   equal(sort(null, story2, story1), 0)
 })
 
-test('sort one unnamed and one named stories', () => {
+test('sorts one unnamed and one named stories', () => {
   const story1 = [null, { kind: '', name: '' }]
   const story2 = [null, { kind: '', name: 'Story' }]
   equal(sort(null, story1, story2), -1)
   equal(sort(null, story2, story1), 1)
 })
 
-test('sort one unnamed and one named stories with an explicit order', () => {
+test('sorts one unnamed and one named stories with an explicit order', () => {
   const story1 = [null, { kind: '', name: '' }]
   const story2 = [null, { kind: '', name: 'Story' }]
   const order = { '': { story: {} } };
@@ -26,14 +30,14 @@ test('sort one unnamed and one named stories with an explicit order', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort without groups alphabetically without specific order', () => {
+test('sorts without groups alphabetically without specific order', () => {
   const story1 = [null, { kind: '', name: 'Story1' }]
   const story2 = [null, { kind: '', name: 'Story2' }]
   equal(sort(null, story1, story2), -1)
   equal(sort(null, story2, story1), 1)
 })
 
-test('sort without groups according to a specific order', () => {
+test('sorts without groups according to a specific order', () => {
   const story1 = [null, { kind: '', name: 'Story1' }]
   const story2 = [null, { kind: '', name: 'Story2' }]
   const order = { '': { story2: {}, story1: {} } };
@@ -41,14 +45,14 @@ test('sort without groups according to a specific order', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort in a group alphabetically without specific order', () => {
+test('sorts in a group alphabetically without specific order', () => {
   const story1 = [null, { kind: 'Test', name: 'Story1' }]
   const story2 = [null, { kind: 'Test', name: 'Story2' }]
   equal(sort(null, story1, story2), -1)
   equal(sort(null, story2, story1), 1)
 })
 
-test('sort in a group according to a specific order', () => {
+test('sorts in a group according to a specific order', () => {
   const story1 = [null, { kind: 'Test', name: 'Story1' }]
   const story2 = [null, { kind: 'Test', name: 'Story2' }]
   const order = { test: { story2: {}, story1: {} } };
@@ -56,7 +60,7 @@ test('sort in a group according to a specific order', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort groups at the second level', () => {
+test('sorts groups at the second level', () => {
   const story1 = [null, { kind: 'First/Second1', name: 'Story' }]
   const story2 = [null, { kind: 'First/Second2', name: 'Story' }]
   const order = {
@@ -69,7 +73,7 @@ test('sort groups at the second level', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort groups at the third level', () => {
+test('sorts groups at the third level', () => {
   const story1 = [null, { kind: 'First/Second/Third1', name: 'Story' }]
   const story2 = [null, { kind: 'First/Second/Third2', name: 'Story' }]
   const order = {
@@ -84,7 +88,7 @@ test('sort groups at the third level', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort stories at the third level', () => {
+test('sorts stories at the third level', () => {
   const story1 = [null, { kind: 'First/Second', name: 'Story1' }]
   const story2 = [null, { kind: 'First/Second', name: 'Story2' }]
   const order = {
@@ -99,7 +103,7 @@ test('sort stories at the third level', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort with a wildcard at the first level of groups', () => {
+test('sorts with a wildcard at the first level of groups', () => {
   const story1 = [null, { kind: 'Test', name: 'Story1' }]
   const story2 = [null, { kind: 'Test', name: 'Story2' }]
   const order = { '*': { story2: {}, story1: {} } };
@@ -107,7 +111,7 @@ test('sort with a wildcard at the first level of groups', () => {
   equal(sort(order, story2, story1), -1)
 })
 
-test('sort complex example', () => {
+test('sorts complex example', () => {
   const story1 = [null, { kind: 'Articles', name: 'Getting Started' }]
   const story2 = [null, { kind: 'Articles', name: 'Versioning' }]
   const story3 = [null, { kind: 'Components/Header', name: 'Collapsed' }]

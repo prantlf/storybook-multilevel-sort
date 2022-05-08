@@ -106,6 +106,12 @@ export const parameters = {
 }
 ```
 
+This package can be imported to CJS projects too:
+
+```js
+const sort = require('storybook-multilevel-sort')
+```
+
 ## Configuration
 
 The sorting configuration is an object. Keys are titles of groups and stories. Values are objects with the next level of groups or stories. Nesting of the objects follows the slash-delimited story paths set to the `title` attribute:

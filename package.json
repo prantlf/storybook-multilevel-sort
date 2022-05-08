@@ -22,21 +22,24 @@
     "node": ">=14"
   },
   "files": [
-    "index.js"
+    "lib"
   ],
   "type": "module",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
   "scripts": {
+    "prepare": "rollup -c",
     "lint": "denolint",
-    "check": "node test",
+    "check": "node test && node test/index.cjs",
     "cover": "c8 node test",
-    "test": "denolint && c8 node test",
-    "ci": "c8 node test"
+    "test": "denolint && node test/index.cjs && c8 node test",
+    "ci": "node test/index.cjs && c8 node test"
   },
   "c8": {
     "100": true,
     "reporter": [
       "lcov",
-      "text-summary"
+      "text"
     ]
   },
   "release": {
@@ -58,7 +61,8 @@
     "@node-rs/deno-lint": "^1.13.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "c8": "^7.11.0",
+    "c8": "^7.11.2",
+    "rollup": "^2.72.1",
     "tehanu": "^0.2.2",
     "tehanu-repo-coco": "^0.0.2"
   },

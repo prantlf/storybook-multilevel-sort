@@ -1,4 +1,6 @@
 .DS_Store
-coverage
-node_modules
 *.log
+*.map
+coverage
+/lib/index.cjs
+node_modules
