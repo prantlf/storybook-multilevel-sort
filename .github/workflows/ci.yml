@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: pnpm run ci
     - name: Coverage
-      run: pnpx -y codecov
+      run: pnpx codecov --disable=gcov
     - name: Publish
       uses: cycjimmy/semantic-release-action@v2
       with:
