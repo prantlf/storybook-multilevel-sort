@@ -1,6 +1,6 @@
 {
   "name": "storybook-multilevel-sort",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Applies specific sort order to more than two levels of chapters and stories in a storybook.",
   "author": "Ferdinand Prantl <prantlf@gmail.com>",
   "license": "MIT",
