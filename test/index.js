@@ -52,6 +52,14 @@ test('sorts in a group alphabetically without specific order', () => {
   equal(sort(null, story2, story1), 1)
 })
 
+test('sorts multiple word story without groups according to a specific order', () => {
+  const story1 = [null, { kind: '', name: 'Story Number One' }]
+  const story2 = [null, { kind: '', name: 'Story Number Two' }]
+  const order = { '': { storyNumberTwo: {}, storyNumberOne: {} } };
+  equal(sort(order, story1, story2), 1)
+  equal(sort(order, story2, story1), -1)
+})
+
 test('sorts in a group according to a specific order', () => {
   const story1 = [null, { kind: 'Test', name: 'Story1' }]
   const story2 = [null, { kind: 'Test', name: 'Story2' }]
