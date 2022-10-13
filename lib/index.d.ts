@@ -1,4 +1,4 @@
-interface Order {
+export interface Order {
   [key: string]: Order | null
 }
 
