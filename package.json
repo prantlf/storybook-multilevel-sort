@@ -59,13 +59,13 @@
     ]
   },
   "devDependencies": {
-    "@node-rs/deno-lint": "^1.13.0",
+    "@node-rs/deno-lint": "^1.14.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "c8": "^7.11.2",
-    "rollup": "^2.72.1",
-    "tehanu": "^0.2.2",
-    "tehanu-repo-coco": "^0.0.2"
+    "c8": "^7.12.0",
+    "rollup": "^3.4.0",
+    "tehanu": "^1.0.1",
+    "tehanu-repo-coco": "^1.0.0"
   },
   "keywords": [
     "storybook-addons",
