@@ -6,7 +6,7 @@ const Template = ({ label }) => {
   return `<div>${label}</div>`
 }
 
-export const Active = Template.bind({});
+export const Active = Template.bind({})
 Active.args = {
   label: 'Active Link'
 }

@@ -11,7 +11,7 @@ test('exports a function', () => {
 test('supports browsers without Object.hasOwn', () => {
   const story1 = [null, { kind: '', name: 'Story1' }]
   const story2 = [null, { kind: '', name: 'Story2' }]
-  const order = { '': { story2: {}, story1: {} } };
+  const order = { '': { story2: {}, story1: {} } }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })

@@ -25,7 +25,7 @@ test('sorts one unnamed and one named stories', () => {
 test('sorts one unnamed and one named stories with an explicit order', () => {
   const story1 = [null, { kind: '', name: '' }]
   const story2 = [null, { kind: '', name: 'Story' }]
-  const order = { '': { story: {} } };
+  const order = { '': { story: {} } }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -47,7 +47,7 @@ test('sorts without groups alphabetically without specific order', () => {
 test('sorts without groups according to a specific order', () => {
   const story1 = [null, { kind: '', name: 'Story1' }]
   const story2 = [null, { kind: '', name: 'Story2' }]
-  const order = { '': { story2: {}, story1: {} } };
+  const order = { '': { story2: {}, story1: {} } }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -62,7 +62,7 @@ test('sorts in a group alphabetically without specific order', () => {
 test('sorts in a group according to a specific order', () => {
   const story1 = [null, { kind: 'Test', name: 'Story1' }]
   const story2 = [null, { kind: 'Test', name: 'Story2' }]
-  const order = { test: { story2: {}, story1: {} } };
+  const order = { test: { story2: {}, story1: {} } }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -83,7 +83,7 @@ test('sorts groups at the second level', () => {
       second2: {},
       second1: {}
     }
-  };
+  }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -98,7 +98,7 @@ test('sorts groups at the third level', () => {
         third1: {}
       }
     }
-  };
+  }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -113,7 +113,7 @@ test('sorts stories at the third level', () => {
         story1: {}
       }
     }
-  };
+  }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -121,7 +121,7 @@ test('sorts stories at the third level', () => {
 test('sorts with a wildcard at the first level of groups', () => {
   const story1 = [null, { kind: 'Test', name: 'Story1' }]
   const story2 = [null, { kind: 'Test', name: 'Story2' }]
-  const order = { '*': { story2: {}, story1: {} } };
+  const order = { '*': { story2: {}, story1: {} } }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -129,7 +129,7 @@ test('sorts with a wildcard at the first level of groups', () => {
 test('sorts with a wildcard at deeper levels of groups', () => {
   const story1 = [null, { kind: 'Test/Stories', name: 'Story1' }]
   const story2 = [null, { kind: 'Test/Stories', name: 'Story2' }]
-  const order = { '**': { story2: {}, story1: {} } };
+  const order = { '**': { story2: {}, story1: {} } }
   equal(sort(order, story1, story2), 1)
   equal(sort(order, story2, story1), -1)
 })
@@ -152,7 +152,7 @@ test('sorts a complex example with *', () => {
     components: {
       '*': { default: null, },
     },
-  };
+  }
   equal(sort(order, story1, story2), -1)
   equal(sort(order, story1, story3), -1)
   equal(sort(order, story1, story6), -1)
@@ -193,7 +193,7 @@ test('sorts a complex example with **', () => {
         }
       }
     }
-  };
+  }
   equal(sort(order, story1, story2), -1)
   equal(sort(order, story1, story3), -1)
   equal(sort(order, story1, story10), -1)
