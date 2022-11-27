@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Header'
+  title: 'Components/Navigation/Header'
 }
 
 const Template = ({ label }) => {

@@ -6,11 +6,14 @@ const order = {
     '*': { default: null }
   },
   components: {
-    header: {
-      default: null,
-      'with search': null
+    navigation: {
+      header: {
+        default: null,
+        'with search': null
+      }
     }
-  }
+  },
+  '**': { default: null }
 }
 
 export const parameters = {

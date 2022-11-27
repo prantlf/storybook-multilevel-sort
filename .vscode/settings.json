@@ -6,7 +6,9 @@
     "**/Thumbs.db": true
   },
   "search.exclude": {
+    "**/coverage": true,
     "**/node_modules": true,
+    "**/storybook-static": true,
     "/lib/index.cjs": true
   }
 }

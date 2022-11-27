@@ -17,10 +17,15 @@ The following directory structure:
 │   ├── Getting Started.mdx   Articles/Getting Started
 │   └── Versioning.mdx        Articles/Versioning
 ├── Components
-│   └── Header
-│       ├── Collapsed.mdx     Components/Header/Collapsed
-│       ├── Default.mdx       Components/Header/Default
-│       └── Expanded.mdx      Components/Header/Expanded
+│   ├── Header
+│   │   ├── Collapsed.mdx     Components/Header/Collapsed
+│   │   ├── Default.mdx       Components/Header/Default
+│   │   ├── Expanded.mdx      Components/Header/Expanded
+│   │   └── WithSearch.mdx    Components/Header/With Search
+│   └── List
+│       ├── Collapsed.mdx     Components/List/Collapsed
+│       ├── Default.mdx       Components/List/Default
+│       └── Expanded.mdx      Components/List/Expanded
 └── Elements
     ├── Button
     │   ├── Active.mdx        Elements/Button/Active
@@ -52,6 +57,11 @@ Elements
 Components
   Header
     Default
+    With Search
+    Collapsed
+    Expanded
+  List
+    Default
     Collapsed
     Expanded
 ```
@@ -67,6 +77,10 @@ const order = {
     '*': { default: null }
   },
   components: {
+    header: {
+      default: null,
+      'with search': null
+    },
     '*': { default: null }
   }
 }
@@ -75,6 +89,22 @@ export const parameters = {
   options: {
     storySort: (story1, story2) => sort(order, story1, story2)
   }
+}
+```
+
+A simplification using nested wildcards:
+
+```js
+const order = {
+  articles: null,
+  elements: null,
+  components: {
+    header: {
+      default: null,
+      'with search': null
+    },
+  },
+  '**': { default: null }
 }
 ```
 
@@ -129,6 +159,38 @@ The sorting configuration is an object. Keys are titles of groups and stories. V
 
 **Keys in the sorting objects have to be lower-case.** If a value is `null` or an empty object, that level will be sorted alphabetically. Names of groups or stories missing among the object keys will be sorted alphabetically, behind the names that are listed as keys.
 
+### Whitespace
+
+Names of groups and stories may include spaces. They are usually declared using pascal-case or camel-case and Storybook will separate the words by spaces:
+
+```js
+// The name will be "With Search"
+export const WithSearch = Template.bind({})
+```
+
+They can be also assigned the displayable name using the `storyName` property:
+
+```js
+// The name will be "With Search" too
+export const story1 = Template.bind({})
+story1.storyName = 'With Search'
+```
+
+When you refer to such groups or stories on the ordering configuration, use the displayable name (with spaces) lower-case, for example:
+
+```js
+const order = {
+  '*': {
+    default: null,
+    'with search': null
+  }
+}
+```
+
+**Generally, names of groups and stories are expected in the ordering configuration as Storybook displays them.** Not as the exported variables are named. You need to be aware of the [algorithm how Storybook generates the names of stories].
+
+### Wildcards
+
 If you want to skip explicit sorting at one level and specify the next level, use `*` instead of names, for which you want to specify the next level. The `*` matches any name, which is not listed explicitly at the same level:
 
 ```js
@@ -138,6 +200,46 @@ If you want to skip explicit sorting at one level and specify the next level, us
   }               // Link/Active
 }                 // Link/Visited
 ```
+
+### Nested Wildcards
+
+If you want to enable implicit sorting at multiple levels, you would have to repeat the `*` selector on each level:
+
+```js
+{
+  elements: {
+    '*': {
+      default: null // Link/Default
+    }               // Link/Active
+  },                // Link/Visited
+  components: {
+    '*': {
+      default: null // Header/Default
+    }               // Header/Collapsed
+  }                 // Header/Expanded
+}
+```
+
+you can use a nested wildcard `**` to specify default for the current and deeper levels. The `**` matches any name, which is not listed explicitly at the same level and if there is no `*` wildcard selector at that level:
+
+```js
+{
+  elements: null,
+  components: null,
+  '**': {
+    default: null // Link/Default
+  }               // Link/Active
+}                 // Link/Visited
+                  // Header/Default
+                  // Header/Collapsed
+                  // Header/Expanded
+```
+
+The precedence of the selectors at a particular level:
+
+1. A concrete name of a group or story
+2. The wildcard `*` matching any name of a group or story
+3. The nested wildcard `**` frm the same or from an outer level matching any name of a group or story
 
 ## Motivation
 
@@ -222,6 +324,7 @@ Licensed under the MIT license.
 
 [storybook]: https://storybook.js.org/
 [sorting configuration supported by Storybook]: https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
+[algorithm how Storybook generates the names of stories]: https://storybook.js.org/docs/react/api/csf#named-story-exports
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.com/
 [PNPM]: https://pnpm.io/
