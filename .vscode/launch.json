@@ -6,9 +6,9 @@
   "configurations": [
     {
       "name": "Test",
-      "type": "pwa-node",
+      "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/test.js",
+      "program": "${workspaceFolder}/test/index.js",
       "skipFiles": [
         "<node_internals>/**"
       ]
