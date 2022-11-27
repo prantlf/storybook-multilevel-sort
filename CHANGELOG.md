@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.1.2...v1.2.0) (2022-11-27)
+
+
+### Features
+
+* Introduce a nested wildcard ** ([2180438](https://github.com/prantlf/storybook-multilevel-sort/commit/2180438278aa8844b6b3578e36fa82edf5db96fe))
+* Support a custom comparator for names of groups and stories ([5e72508](https://github.com/prantlf/storybook-multilevel-sort/commit/5e725088a4d42e4cf2f96131a0b09d31da23447a))
+
 ## [1.1.2](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.1.1...v1.1.2) (2022-11-27)
 
 
