@@ -4,3 +4,4 @@
 coverage
 /lib/index.cjs
 node_modules
+storybook-static
