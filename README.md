@@ -39,7 +39,8 @@ Can be sorted according to this request:
 
 1. `Elements` before `Components`
 2. `Default` stories before the others
-3. Otherwise alphabetically
+3. `With Search` right after `Default` and before the others
+4. Otherwise alphabetically
 
 Resulting in a TOC like this:
 
