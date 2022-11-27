@@ -60,6 +60,14 @@ test('sorts in a group according to a specific order', () => {
   equal(sort(order, story2, story1), -1)
 })
 
+test('sorts stories using names made of multiple words', () => {
+  const story1 = [null, { kind: '', name: 'Story Number One' }]
+  const story2 = [null, { kind: '', name: 'Story Number Two' }]
+  const order = { '': { 'story number two': {}, 'story number one': {} } }
+  equal(sort(order, story1, story2), 1)
+  equal(sort(order, story2, story1), -1)
+})
+
 test('sorts groups at the second level', () => {
   const story1 = [null, { kind: 'First/Second1', name: 'Story' }]
   const story2 = [null, { kind: 'First/Second2', name: 'Story' }]
