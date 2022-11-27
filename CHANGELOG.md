@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.1.1...v1.1.2) (2022-11-27)
+
+
+### Bug Fixes
+
+* Declare exports in package.json ([c36cafc](https://github.com/prantlf/storybook-multilevel-sort/commit/c36cafce6a19dadab855428a03ed553901f26a52)), closes [#1](https://github.com/prantlf/storybook-multilevel-sort/issues/1)
+
 ## [1.1.1](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.1.0...v1.1.1) (2022-11-27)
 
 
