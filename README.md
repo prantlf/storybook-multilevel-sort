@@ -110,7 +110,7 @@ const order = {
 
 ## Installation
 
-This module can be installed in your project using [NPM], [PNPM] or [Yarn]. Make sure, that you use [Node.js] version 14 or newer.
+This module can be installed in your project using [NPM], [PNPM] or [Yarn]. Make sure, that you use [Node.js] version 14.8 or newer.
 
 ```sh
 npm i -D storybook-multilevel-sort
@@ -126,7 +126,7 @@ This package exports a function to compare two stories:
 import sort from 'storybook-multilevel-sort'
 ```
 
-The function expects an object with the sorting configuration and two stories to compare, just like storybook passed them to the `storySort` method:
+The function expects an object with the sorting configuration, two stories to compare, just like storybook passed them to the `storySort` method, and optionally sorting options:
 
 ```js
 export const parameters = {
@@ -141,6 +141,31 @@ This package can be imported to CJS projects too:
 ```js
 const sort = require('storybook-multilevel-sort')
 ```
+
+### Custom Comparisons
+
+Names of groups and stories on one level are compared alphabetically according to the current locale by default. If you need a different comparison, you can specify it using the optional `options` parameter:
+
+```js
+const options = {
+  compareNames: (name1, name2, context) {
+    // name1 - the string with the name on the left side of the comparison
+    // name2 - the string with the name on the right side of the comparison
+    // context - additional information
+    // context.path1 - an array of strings with the path of groups
+    //                 down to the left compared group or story name (name1)
+    // context.path2 - an array of strings with the path of groups
+    //                 down to the right compared group or story name (name2)
+    return name1.localeCompare(name2, { numeric: true })
+  }
+}
+
+...
+
+  storySort: (story1, story2) => sort(order, story1, story2, options)
+```
+
+Mind that the strings with names of groups and stories are converted to lower-case, before they are passed to the comparator.
 
 ## Configuration
 

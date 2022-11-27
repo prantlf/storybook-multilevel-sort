@@ -37,10 +37,10 @@
   },
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "denolint",
+    "lint": "denolint && tsc --noEmit test/types.ts",
     "check": "teru-esm test/index.js && teru-cjs test/index.cjs",
     "cover": "c8 tehanu-esm test/index.js",
-    "test": "denolint && teru-cjs test/index.cjs && c8 teru-esm test/index.js",
+    "test": "denolint && tsc --noEmit test/types.ts && teru-cjs test/index.cjs && c8 teru-esm test/index.js",
     "ci": "teru-cjs test/index.cjs && c8 teru-esm test/index.js"
   },
   "c8": {
@@ -71,9 +71,11 @@
     "@semantic-release/git": "^10.0.1",
     "c8": "^7.12.0",
     "rollup": "^3.4.0",
+    "storybook-multilevel-sort": "link:",
     "tehanu": "^1.0.1",
     "tehanu-repo-coco": "^1.0.0",
-    "tehanu-teru": "^1.0.0"
+    "tehanu-teru": "^1.0.0",
+    "typescript": "^4.9.3"
   },
   "keywords": [
     "storybook-addons",

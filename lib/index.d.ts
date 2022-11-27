@@ -3,8 +3,17 @@ export interface Order {
 }
 
 // eslint-disable-next-line no-explicit-any
-type Story = any
+export type Story = any
 
-declare function sort(order: Order, story1: Story, story2: Story): 0 | -1 | 1
+export type Result = 0 | -1 | 1
 
-export default sort
+export interface Context {
+  path1: string[],
+  path2: string[]
+}
+
+export interface Options {
+  compareNames?: (name1: string, name2: string, context: Context) => Result
+}
+
+export default function sort(order: Order, story1: Story, story2: Story, options?: Options): Result

@@ -134,6 +134,14 @@ test('sorts with a wildcard at deeper levels of groups', () => {
   equal(sort(order, story2, story1), -1)
 })
 
+test('sorts with a custom comparator', () => {
+  const story1 = [null, { kind: '', name: 'Story1' }]
+  const story2 = [null, { kind: '', name: 'Story2' }]
+  const compareNames = (name1, name2) => -name1.localeCompare(name2, { numeric: true })
+  equal(sort(null, story1, story2, { compareNames }), 1)
+  equal(sort(null, story2, story1, { compareNames }), -1)
+})
+
 test('sorts a complex example with *', () => {
   const story1 = [null, { kind: 'Articles', name: 'Getting Started' }]
   const story2 = [null, { kind: 'Articles', name: 'Versioning' }]
