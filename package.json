@@ -22,7 +22,7 @@
     "url": "https://github.com/prantlf/storybook-multilevel-sort/issues"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=14.8"
   },
   "files": [
     "lib"
@@ -31,13 +31,17 @@
   "main": "lib/index.cjs",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.js"
+  },
   "scripts": {
     "prepare": "rollup -c",
     "lint": "denolint",
-    "check": "node test && node test/index.cjs",
-    "cover": "c8 node test",
-    "test": "denolint && node test/index.cjs && c8 node test",
-    "ci": "node test/index.cjs && c8 node test"
+    "check": "teru-esm test/index.js && teru-cjs test/index.cjs",
+    "cover": "c8 tehanu-esm test/index.js",
+    "test": "denolint && teru-cjs test/index.cjs && c8 teru-esm test/index.js",
+    "ci": "teru-cjs test/index.cjs && c8 teru-esm test/index.js"
   },
   "c8": {
     "100": true,
@@ -68,7 +72,8 @@
     "c8": "^7.12.0",
     "rollup": "^3.4.0",
     "tehanu": "^1.0.1",
-    "tehanu-repo-coco": "^1.0.0"
+    "tehanu-repo-coco": "^1.0.0",
+    "tehanu-teru": "^1.0.0"
   },
   "keywords": [
     "storybook-addons",
