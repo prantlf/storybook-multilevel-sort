@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.1.0...v1.1.1) (2022-11-27)
+
+
+### Bug Fixes
+
+* Support browsers without Object.hasOwn ([b67cfef](https://github.com/prantlf/storybook-multilevel-sort/commit/b67cfef9203890c63a9eff55779c93ecc50df43c)), closes [#6](https://github.com/prantlf/storybook-multilevel-sort/issues/6)
+
 # [1.1.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.0.0...v1.1.0) (2022-05-08)
 
 
