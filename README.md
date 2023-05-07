@@ -9,6 +9,15 @@ Applies specific sort order to more than two levels of chapters and stories in a
 
 See also an [example of a Storybook project].
 
++**Warning**: Versions `2.x` of this package will support Storybook 7 only. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. However, the support for Storybook 7 is currently in development.
+
+Changes in Storybook 7 don't allow customising the sorting in `preview.js` any more. There's mo re about this in the [open issue]. There're currently two variants of the new interface, which offer the same customisability by putting code to both `main.js` and `preview.js`:
+
+* Configuration expected to be set [via an exported function].
+* Configuration expected to be set [via addon options]. (Not finished yet.)
+
+The first variant can be tried using the beta version of this package: `storybook-multilevel-sort@2.0.0-next.0`. The documentation is available at the link to the variant above.
+
 ## Synopsis
 
 The following directory structure:
@@ -354,6 +363,10 @@ Licensed under the MIT license.
 [sorting configuration supported by Storybook]: https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
 [algorithm how Storybook generates the names of stories]: https://storybook.js.org/docs/react/api/csf#named-story-exports
 [example of a Storybook project]: ./example
+[versions `1.x` of this package]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x#readme
+[via an exported function]: https://github.com/prantlf/storybook-multilevel-sort/tree/sb7-via-export#readme
+[via addon options]: https://github.com/prantlf/storybook-multilevel-sort/tree/sb7-via-addon#readme
+[open issue]: https://github.com/prantlf/storybook-multilevel-sort/issues/8#issuecomment-1537507235
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.com/
 [PNPM]: https://pnpm.io/
