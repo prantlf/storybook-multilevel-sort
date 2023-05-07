@@ -356,7 +356,7 @@ Licensed under the MIT license.
 [sorting configuration supported by Storybook]: https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
 [algorithm how Storybook generates the names of stories]: https://storybook.js.org/docs/react/api/csf#named-story-exports
 [example of a Storybook project]: ./example
-[current version of this package]: https://github.com/prantlf/storybook-multilevel-sort@readme
+[current version of this package]: https://github.com/prantlf/storybook-multilevel-sort#readme
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.com/
 [PNPM]: https://pnpm.io/
