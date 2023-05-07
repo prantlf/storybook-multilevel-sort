@@ -103,7 +103,7 @@ export function compareStories(
 /**
  * Implements `parameters.options.storySort` for `.storybook/preview.js`.
  */
-export function storySort(story1: Story, story2: Story)
+export function storySort(story1: Story, story2: Story): CompareResult
 
 /**
  * Configuration for the behaviour of `storySort`.
@@ -145,4 +145,4 @@ export interface SortOptions {
  * This function has to be called at least once before `storySort` is called.
  * The property `storyOrder` has to be set.
  */
-export function configureSort(sortOptions: SortOptions)
+export function configureSort(sortOptions: SortOptions): void

@@ -41,7 +41,7 @@
     "lint": "denolint && tsc --noEmit test/types.ts",
     "check": "teru-esm test/index.js && teru-cjs test/index.cjs",
     "cover": "c8 teru-esm test/index.js",
-    "test": "tsc --noEmit test/types.ts && teru-cjs test/index.cjs && c8 teru-esm test/index.js"
+    "test": "tsc --noEmit test/types.ts && teru-cjs test/index.cjs && teru-esm test/index.js"
   },
   "c8": {
     "100": true,
