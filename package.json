@@ -4,7 +4,8 @@
   "description": "Applies specific sort order to more than two levels of chapters and stories in a storybook.",
   "author": "Ferdinand Prantl <prantlf@gmail.com>",
   "contributors": [
-    "Alessandro Rabitti <alessandro.rabitti@externals.adidas.com>"
+    "Alessandro Rabitti <alessandro.rabitti@externals.adidas.com>",
+    "Cesar Costas <gatsbimantico@gmail.com>"
   ],
   "license": "MIT",
   "licenses": [
@@ -22,7 +23,7 @@
     "url": "https://github.com/prantlf/storybook-multilevel-sort/issues"
   },
   "engines": {
-    "node": ">=14.8"
+    "node": ">=16"
   },
   "files": [
     "lib"

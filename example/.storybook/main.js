@@ -1,34 +1,39 @@
-module.exports = {
+import { configureSort } from 'storybook-multilevel-sort'
+
+configureSort({
+  storyOrder: {
+    articles: null,
+    elements: {
+      '*': { default: null }
+    },
+    components: {
+      navigation: {
+        header: {
+          default: null,
+          'with search': null
+        }
+      }
+    },
+    '**': { default: null }
+  }
+})
+
+export default {
   stories: [
-    '../stories/**/*.stories.mdx',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
+    '../stories'
   ],
   addons: [
     '@storybook/addon-essentials',
-    {
-      name: 'storybook-addon-turbo-build',
-      options: {
-        optimizationLevel: 4,
-        previewTranspiler() {
-          return {
-            loader: 'swc-loader'
-          }
-        },
-        managerTranspiler() {
-          return null
-        }
-      }
-    }
+    '@storybook/addon-mdx-gfm'
   ],
-  framework: '@storybook/html',
+  framework: {
+    name: '@storybook/html-vite'
+  },
+  docs: {
+    autodocs: true,
+    defaultName: 'Documentation'
+  },
   core: {
-    disableTelemetry: true,
-    builder: {
-      name: 'webpack5',
-      options: {
-        lazyCompilation: true,
-        fsCache: true
-      }
-    }
+    disableTelemetry: true
   }
 }

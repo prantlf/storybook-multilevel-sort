@@ -1,5 +1,3 @@
 reject:
-  - "@storybook/addon-essentials"
-  - "@storybook/builder-webpack5"
-  - "@storybook/manager-webpack5"
-  - "@storybook/html"
+  - react
+  - react-dom
