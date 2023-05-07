@@ -7,6 +7,8 @@
 
 Applies specific sort order to more than two levels of chapters and stories in a [storybook].
 
+**Warning**: Versions `1.x` of this package support Storybook 6 and older. If you use Storybook 7, look for the [current version of this package].
+
 See also an [example of a Storybook project].
 
 ## Synopsis
@@ -354,6 +356,7 @@ Licensed under the MIT license.
 [sorting configuration supported by Storybook]: https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
 [algorithm how Storybook generates the names of stories]: https://storybook.js.org/docs/react/api/csf#named-story-exports
 [example of a Storybook project]: ./example
+[current version of this package]: https://github.com/prantlf/storybook-multilevel-sort@readme
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.com/
 [PNPM]: https://pnpm.io/
