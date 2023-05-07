@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.2.0...v1.2.1) (2023-05-07)
+
+
+### Bug Fixes
+
+* Add comments to TypeScript types ([49d84cb](https://github.com/prantlf/storybook-multilevel-sort/commit/49d84cb296c4c3d2f29c7411add5b7ba882c691f))
+
 # [1.2.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.1.2...v1.2.0) (2022-11-27)
 
 
