@@ -1,4 +1,6 @@
-import { compareStories, CompareResult } from 'storybook-multilevel-sort'
+import {
+  compareStories, configureSort, storySort, CompareResult
+} from 'storybook-multilevel-sort'
 
 compareStories({}, {}, {})
 
@@ -7,3 +9,11 @@ const compareNames = (name1: string, name2: string, { path1, path2 }): CompareRe
   return name1.localeCompare(name2) as CompareResult
 }
 compareStories({}, {}, {}, { compareNames })
+
+configureSort()
+configureSort({})
+configureSort({ storyOrder: {} })
+configureSort({ typeOrder: [] })
+configureSort({ compareNames })
+
+storySort({}, {})

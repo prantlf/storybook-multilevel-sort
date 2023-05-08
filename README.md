@@ -176,7 +176,7 @@ const { configureSort } = require('storybook-multilevel-sort')
 
 The object expected by the `configureSort` function may include the following properties:
 
-* `storyOrder`: configuration of the sort order based on names of groups and stories (`object`, mandatory)
+* `storyOrder`: configuration of the sort order based on names of groups and stories (`object`, optional)
 * `compareNames`: custom name comparison function (`function`, optional)
 * `typeOrder`: configuration of the page grouping and sort order based on types of the pages (`array`, optional)
 

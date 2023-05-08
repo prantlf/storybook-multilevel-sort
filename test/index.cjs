@@ -1,17 +1,19 @@
 delete Object.hasOwn // simulate older browsers
 
-const { equal } = require('assert')
+const { strictEqual } = require('assert')
 const test = require('tehanu')(__filename)
-const { compareStories } = require('../lib/index.cjs')
+const { compareStories, configureSort, storySort } = require('../lib/index.cjs')
 
-test('exports a function', () => {
-  equal(typeof compareStories, 'function')
+test('exports functions', () => {
+  strictEqual(typeof compareStories, 'function')
+  strictEqual(typeof storySort, 'function')
+  strictEqual(typeof configureSort, 'function')
 })
 
 test('supports browsers without Object.hasOwn', () => {
   const story1 = { title: '', name: 'Story1', type: 'story' }
   const story2 = { title: '', name: 'Story2', type: 'story' }
   const order = { '': { story2: {}, story1: {} } }
-  equal(compareStories(order, story1, story2), 1)
-  equal(compareStories(order, story2, story1), -1)
+  strictEqual(compareStories(order, story1, story2), 1)
+  strictEqual(compareStories(order, story2, story1), -1)
 })

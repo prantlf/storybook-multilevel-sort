@@ -143,6 +143,5 @@ export interface SortOptions {
  * for `storySort`, which will be used later in `.storybook/preview.js`.
  *
  * This function has to be called at least once before `storySort` is called.
- * The property `storyOrder` has to be set.
  */
-export function configureSort(sortOptions: SortOptions): void
+export function configureSort(sortOptions?: SortOptions): void
