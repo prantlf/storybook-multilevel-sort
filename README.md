@@ -14,9 +14,9 @@ See also an [example of a Storybook project].
 Changes in Storybook 7 don't allow customising the sorting in `preview.js` any more. There's mo re about this in the [open issue]. There're currently two variants of the new interface, which offer the same customisability by putting code to both `main.js` and `preview.js`:
 
 * Configuration expected to be set [via an exported function].
-* Configuration expected to be set [via addon options]. (Not finished yet.)
+* Configuration expected to be set [via addon options]. (Doesn't work, hopefully just yet.)
 
-The first variant can be tried using the beta version of this package: `storybook-multilevel-sort@2.0.0-next.0`. The documentation is available at the link to the variant above.
+Both variants can be tried using the beta version of this package: `storybook-multilevel-sort@2.0.0-next.1`. The documentation is available at the links to the variants above.
 
 ## Synopsis
 
