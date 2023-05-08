@@ -33,8 +33,15 @@
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
-    "require": "./lib/index.cjs",
-    "import": "./lib/index.js"
+    ".": {
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./preview": {
+      "require": "./lib/preview.cjs",
+      "import": "./lib/preview.js"
+    }
   },
   "scripts": {
     "prepare": "rollup -c",
@@ -42,6 +49,10 @@
     "check": "teru-esm test/index.js && teru-cjs test/index.cjs",
     "cover": "c8 teru-esm test/index.js",
     "test": "tsc --noEmit test/types.ts && teru-cjs test/index.cjs && c8 teru-esm test/index.js"
+  },
+  "storybook": {
+    "displayName": "Multi-level Sorting of Stories",
+    "icon": "https://raw.github.com/prantlf/storybook-multilevel-sort/master/docs/sort-128.png"
   },
   "c8": {
     "100": true,
@@ -82,6 +93,7 @@
     "storybook-addon",
     "storybook",
     "storybookjs",
+    "addons",
     "addon",
     "sort",
     "multilevel"

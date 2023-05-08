@@ -46,44 +46,40 @@ The version `storybook-multilevel-sort` package in `package.json` needs to be in
 
 ```json
 "devDependencies": {
-  "storybook-multilevel-sort": "2.0.0-next.0"
+  "storybook-multilevel-sort": "2.0.0-next.1"
 }
 ```
 
-And the configuration needs to be moved from `.storybook/preview.js` to `.storybook/main.js`. The object from the `order` variable above belongs to the property `storyOrder` passed to the call to `configureSort`:
+And the configuration needs to be moved from `.storybook/preview.js` to `.storybook/main.js`. The object from the `order` variable above belongs to the property `storyOrder` passed to the addon options:
 
 ```js
-import { configureSort } from 'storybook-multilevel-sort'
-
-configureSort({
-  storyOrder: {
-    articles: null,
-    elements: {
-      '*': { default: null }
-    },
-    components: {
-      navigation: {
-        header: {
-          default: null,
-          'with search': null
-        }
+const storyOrder = {
+  articles: null,
+  elements: {
+    '*': { default: null }
+  },
+  components: {
+    navigation: {
+      header: {
+        default: null,
+        'with search': null
       }
-    },
-    '**': { default: null }
-  }
-})
-```
+    }
+  },
+  '**': { default: null }
+}
 
-Eventually, all the code above related to the custom sorting in `.storybook/preview.js` needs to be replaced with just the following:
-
-```js
-export const parameters = {
-  options: {
-    storySort: (story1, story2) =>
-      globalThis['storybook-multilevel-sort:storySort'](story1, story2)
-  }
+export default {
+  addons: [
+    {
+      name: 'storybook-multilevel-sort',
+      options: { storyOrder }
+    }
+  ]
 }
 ```
+
+Eventually, all the code above related to the custom sorting in `.storybook/preview.js` is not needed any more and can be removed.
 
 Later changes to customising the sorting will be made only in `.storybook/main.js`.
 

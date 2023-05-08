@@ -1,4 +1,4 @@
-# Multi-level Sorting for Storybook
+# ![Logo](docs/sort-24.png) Multi-level Sorting for Storybook
 
 [![Latest version](https://img.shields.io/npm/v/storybook-multilevel-sort)
  ![Dependency status](https://img.shields.io/librariesio/release/npm/storybook-multilevel-sort)
@@ -9,11 +9,13 @@ Applies specific sort order to more than two levels of chapters and stories in a
 
 See also an [example of a Storybook project].
 
-+**Warning**: Versions `2.x` of this package will support Storybook 7 only. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. However, the support for Storybook 7 is currently in development.
+**Warning**: Versions `2.x` of this package will support Storybook 7 only. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. However, the support for Storybook 7 is currently in development.
 
-Changes in Storybook 7 don't allow customising the sorting in `preview.js` any more. There's more about this in the [open issue]. There're currently two variants of the new interface, which offer the same customisability by putting code to both `main.js` and `preview.js`. This branch explores the way *via an exported function*. The documentation is available below.
+Changes in Storybook 7 don't allow customising the sorting in `preview.js` any more. There's more about this in the [open issue]. There're currently two variants of the new interface, which offer the same customisability by putting code to both `main.js` and `preview.js`. This branch explores the way *via an add-on*. The documentation is available below.
 
-Both variants can be tried using the beta version of this package: `storybook-multilevel-sort@2.0.0-next.0`.
+Both variants can be tried using the beta version of this package: `storybook-multilevel-sort@2.0.0-next.1`.
+
+**Warning**: The add-on approach in this branch doesn't work.
 
 See the [documentation about how to migrate] from a version `1.x` to version `2.x` of this package.
 
@@ -80,42 +82,36 @@ Components
 When using the following code in `.storybook/main.js`:
 
 ```js
-import { configureSort } from 'storybook-multilevel-sort'
-
-configureSort({
-  storyOrder: {
-    articles: null,
-    elements: {
-      '*': { default: null }
-    },
-    components: {
-      navigation: {
-        header: {
-          default: null,
-          'with search': null
-        }
+const storyOrder = {
+  articles: null,
+  elements: {
+    '*': { default: null }
+  },
+  components: {
+    navigation: {
+      header: {
+        default: null,
+        'with search': null
       }
-    },
-    '**': { default: null }
-  }
-})
-```
+    }
+  },
+  '**': { default: null }
+}
 
-And the following code in `.storybook/preview.js`:
-
-```js
-export const parameters = {
-  options: {
-    storySort: (story1, story2) =>
-      globalThis['storybook-multilevel-sort:storySort'](story1, story2)
-  }
+export default {
+  addons: [
+    {
+      name: 'storybook-multilevel-sort',
+      options: { storyOrder }
+    }
+  ]
 }
 ```
 
 A simpler configuration using nested wildcards:
 
 ```js
-{
+const storyOrder = {
   articles: null,
   elements: null,
   components: {
@@ -133,45 +129,30 @@ A simpler configuration using nested wildcards:
 This module can be installed in your project using [NPM], [PNPM] or [Yarn]. Make sure, that you use [Node.js] version 16 or newer.
 
 ```sh
-npm i -D storybook-multilevel-sort@2.0.0-next.0
-pnpm i -D storybook-multilevel-sort@2.0.0-next.0
-yarn add storybook-multilevel-sort@2.0.0-next.0
+npm i -D storybook-multilevel-sort@2.0.0-next.1
+pnpm i -D storybook-multilevel-sort@2.0.0-next.1
+yarn add storybook-multilevel-sort@2.0.0-next.1
 ```
 
 ## API
 
-This package exports a function to configure the custom sorting:
+This package contains a Storybook add-on setting up the custom sorting: It is supposed to be added to `.storybook/main.js` and expects an object with the sorting configuration:
 
 ```js
-import { configureSort } from 'storybook-multilevel-sort'
-```
-
-The function is supposed to be executed in `.storybook/main.js` and expects an object with the sorting configuration:
-
-```js
-configureSort({
-  typeOrder: ...
-  storyOrder: ...
-  compareNames: ...
-})
-```
-
-It prepares a global function, which will be called in the `storySort` callback with the two stories to compare, implemented in`.storybook/preview.js`:
-
-```js
-export const parameters = {
-  options: {
-    storySort: (story1, story2) =>
-      globalThis['storybook-multilevel-sort:storySort'](story1, story2)
-  }
+export default {
+  addons: [
+    {
+      name: 'storybook-multilevel-sort',
+      options: {
+        typeOrder: ...
+        storyOrder: ...
+        compareNames: ...
+      }
+    }
+  ]
 }
 ```
 
-This package can be imported to CJS projects too:
-
-```js
-const { configureSort } = require('storybook-multilevel-sort')
-```
 ## Configuration
 
 The object expected by the `configureSort` function may include the following properties:
@@ -185,16 +166,14 @@ The object expected by the `configureSort` function may include the following pr
 The sorting configuration is an object set by the `sortOrder` property. Keys are titles of groups and stories. Values are objects with the next level of groups or stories. Nesting of the objects follows the slash-delimited story paths set to the `title` attribute:
 
 ```js
-configureSort({
-  storyOrder: {
-    elements: {
-      link: null,    // Elements/Link/...
-      button: null   // Elements/Button/...
-    },
-    components: null // Components/Card/...
-                    // Components/Header/...
-  }
-})
+const storyOrder = {
+  elements: {
+    link: null,    // Elements/Link/...
+    button: null   // Elements/Button/...
+  },
+  components: null // Components/Card/...
+                  // Components/Header/...
+}
 ```
 
 **Keys in the sorting objects have to be lower-case.** If a value is `null` or an empty object, that level will be sorted alphabetically. Names of groups or stories missing among the object keys will be sorted alphabetically, behind the names that are listed as keys.
@@ -219,12 +198,10 @@ story1.storyName = 'With Search'
 When you refer to such groups or stories on the ordering configuration, use the displayable name (with spaces) lower-case, for example:
 
 ```js
-{
-  storyOrder: {
-    '*': {
-      default: null,
-      'with search': null
-    }
+const storyOrder = {
+  '*': {
+    default: null,
+    'with search': null
   }
 }
 ```
@@ -236,13 +213,11 @@ When you refer to such groups or stories on the ordering configuration, use the 
 If you want to skip explicit sorting at one level and specify the next level, use `*` instead of names, for which you want to specify the next level. The `*` matches any name, which is not listed explicitly at the same level:
 
 ```js
-{
-  storyOrder: {
-    '*': {
-      default: null // Link/Default
-    }               // Link/Active
-  }                 // Link/Visited
-}
+const storyOrder = {
+  '*': {
+    default: null // Link/Default
+  }               // Link/Active
+}                 // Link/Visited
 ```
 
 ### Nested Wildcards
@@ -250,37 +225,33 @@ If you want to skip explicit sorting at one level and specify the next level, us
 If you want to enable implicit sorting at multiple levels, you would have to repeat the `*` selector on each level:
 
 ```js
-{
-  storyOrder: {
-    elements: {
-      '*': {
-        default: null // Link/Default
-      }               // Link/Active
-    },                // Link/Visited
-    components: {
-      '*': {
-        default: null // Header/Default
-      }               // Header/Collapsed
-    }                 // Header/Expanded
-  }
+const storyOrder = {
+  elements: {
+    '*': {
+      default: null // Link/Default
+    }               // Link/Active
+  },                // Link/Visited
+  components: {
+    '*': {
+      default: null // Header/Default
+    }               // Header/Collapsed
+  }                 // Header/Expanded
 }
 ```
 
 you can use a nested wildcard `**` to specify default for the current and deeper levels. The `**` matches any name, which is not listed explicitly at the same level and if there is no `*` wildcard selector at that level:
 
 ```js
-{
-  storyOrder: {
-    elements: null,
-    components: null,
-    '**': {
-      default: null // Link/Default
-    }               // Link/Active
-  }                 // Link/Visited
-                    // Header/Default
-                    // Header/Collapsed
-                    // Header/Expanded
-}
+const storyOrder = {
+  elements: null,
+  components: null,
+  '**': {
+    default: null // Link/Default
+  }               // Link/Active
+}                 // Link/Visited
+                  // Header/Default
+                  // Header/Collapsed
+                  // Header/Expanded
 ```
 
 The precedence of the selectors at a particular level:
@@ -294,19 +265,24 @@ The precedence of the selectors at a particular level:
 Names of groups and stories on one level are compared alphabetically according to the current locale by default. If you need a different comparison, you can specify it by using the optional `compareNames` parameter:
 
 ```js
-{
-  storyOrder: ...
+const compareNames: (name1, name2, context) {
+  // name1 - the string with the name on the left side of the comparison
+  // name2 - the string with the name on the right side of the comparison
+  // context - additional information
+  // context.path1 - an array of strings with the path of groups
+  //                 down to the left compared group or story name (name1)
+  // context.path2 - an array of strings with the path of groups
+  //                 down to the right compared group or story name (name2)
+  return name1.localeCompare(name2, { numeric: true })
+}
 
-  compareNames: (name1, name2, context) {
-    // name1 - the string with the name on the left side of the comparison
-    // name2 - the string with the name on the right side of the comparison
-    // context - additional information
-    // context.path1 - an array of strings with the path of groups
-    //                 down to the left compared group or story name (name1)
-    // context.path2 - an array of strings with the path of groups
-    //                 down to the right compared group or story name (name2)
-    return name1.localeCompare(name2, { numeric: true })
-  }
+export default {
+  addons: [
+    {
+      name: 'storybook-multilevel-sort',
+      options: { compareNames }
+    }
+  ]
 }
 ```
 
@@ -319,10 +295,15 @@ Storybook 7 introduced a new type of pages, which can appear among the stories -
 Storybook inserts the links to the "Docs" pages before the first story of a particular component. This custom sorting will retain it by default, because the "Docs" page usually contains an overview of the component's usage. But you can change it by the `typeOrder` property. This is the default value, which groups all pages of the `docs` type before all pages of the `story` type:
 
 ```js
-{
-  storyOrder: ...
+const typeOrder = ['docs', 'story']
 
-  typeOrder: ['docs', 'story']
+export default {
+  addons: [
+    {
+      name: 'storybook-multilevel-sort',
+      options: { typeOrder }
+    }
+  ]
 }
 ```
 
@@ -331,11 +312,7 @@ The order of types in he array will be the order of the page groups. If you spec
 If you want to handle the `docs` pages like any other stories and sort all the pages only by their names, you can pass an empty array to `typeOrder` to disable the gouping by type:
 
 ```js
-{
-  storyOrder: ...
-
-  typeOrder: []
-}
+const typeOrder = []
 ```
 
 ## Motivation
@@ -425,7 +402,7 @@ Licensed under the MIT license.
 [example of a Storybook project]: ./example
 [versions `1.x` of this package]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x#readme
 [open issue]: https://github.com/prantlf/storybook-multilevel-sort/issues/8#issuecomment-1537507235
-[documentation about how to migrate]: ./MIGRATION.md
+[documentation about how to migrate]: ./docs/MIGRATION.md
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.com/
 [PNPM]: https://pnpm.io/
