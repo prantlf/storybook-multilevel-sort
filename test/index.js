@@ -326,12 +326,3 @@ test('configureSort passes compareNames via globalThis', () => {
   strictEqual(storySort(story1, story2), 1)
   strictEqual(storySort(story2, story1), -1)
 })
-
-// test('groups docs and stories together', () => {
-//   const story1 = { title: '', name: 'Story1', type: 'story' }
-//   const docs1 = { title: '', name: 'Docs1', type: 'docs' }
-//   const story2 = { title: '', name: 'Story2', type: 'story' }
-//   const docs2 = { title: '', name: 'Docs2', type: 'docs' }
-//   equal(compareStories(null, story1, docs1), 1)
-//   equal(compareStories(null, docs1, story1), -1)
-// })

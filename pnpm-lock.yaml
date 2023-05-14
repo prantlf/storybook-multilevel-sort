@@ -14,8 +14,8 @@ devDependencies:
     specifier: ^7.13.0
     version: 7.13.0
   rollup:
-    specifier: ^3.21.7
-    version: 3.21.7
+    specifier: ^3.21.5
+    version: 3.21.5
   storybook-multilevel-sort:
     specifier: 'link:'
     version: 'link:'
@@ -2229,8 +2229,8 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup@3.21.7:
-    resolution: {integrity: sha512-KXPaEuR8FfUoK2uHwNjxTmJ18ApyvD6zJpYv9FOJSqLStmt6xOY84l1IjK2dSolQmoXknrhEFRaPRgOPdqCT5w==}
+  /rollup@3.21.5:
+    resolution: {integrity: sha512-a4NTKS4u9PusbUJcfF4IMxuqjFzjm6ifj76P54a7cKnvVzJaG12BLVR+hgU2YDGHzyMMQNxLAZWuALsn8q2oQg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:

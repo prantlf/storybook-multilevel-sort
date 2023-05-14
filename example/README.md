@@ -12,7 +12,6 @@
 
     npm start
 
-See [`.storybook/main.js`] and [`.storybook/preview.js`] for details of the sorting customisation.
+See [`.storybook/preview.js`] for details of the sorting customisation.
 
-[`.storybook/main.js`]: ./.storybook/main.js
 [`.storybook/preview.js`]: ./.storybook/preview.js
