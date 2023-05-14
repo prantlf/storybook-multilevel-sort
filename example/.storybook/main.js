@@ -1,22 +1,38 @@
-import { configureSort } from 'storybook-multilevel-sort'
+// import { configureSort } from 'storybook-multilevel-sort'
 
-configureSort({
-  storyOrder: {
-    articles: null,
-    elements: {
-      '*': { default: null }
-    },
-    components: {
-      navigation: {
-        header: {
-          default: null,
-          'with search': null
-        }
+// configureSort({
+//   storyOrder: {
+//     articles: null,
+//     elements: {
+//       '*': { default: null }
+//     },
+//     components: {
+//       navigation: {
+//         header: {
+//           default: null,
+//           'with search': null
+//         }
+//       }
+//     },
+//     '**': { default: null }
+//   }
+// })
+
+const storyOrder = {
+  articles: null,
+  elements: {
+    '*': { default: null }
+  },
+  components: {
+    navigation: {
+      header: {
+        default: null,
+        'with search': null
       }
-    },
-    '**': { default: null }
-  }
-})
+    }
+  },
+  '**': { default: null }
+}
 
 export default {
   stories: [
@@ -24,7 +40,11 @@ export default {
   ],
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-mdx-gfm'
+    '@storybook/addon-mdx-gfm',
+    {
+      name: 'storybook-multilevel-sort',
+      options: { storyOrder }
+    }
   ],
   framework: {
     name: '@storybook/html-vite'

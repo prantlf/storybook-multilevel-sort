@@ -1,6 +1,6 @@
 {
   "name": "storybook-multilevel-sort",
-  "version": "2.0.0",
+  "version": "2.0.0-next.2",
   "description": "Applies specific sort order to more than two levels of chapters and stories in a storybook.",
   "author": "Ferdinand Prantl <prantlf@gmail.com>",
   "contributors": [
@@ -75,7 +75,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "c8": "^7.13.0",
-    "rollup": "^3.21.7",
+    "rollup": "^3.21.5",
     "storybook-multilevel-sort": "link:",
     "tehanu": "^1.0.1",
     "tehanu-repo-coco": "^1.0.0",
@@ -85,8 +85,8 @@
   "keywords": [
     "storybook-addons",
     "storybook-addon",
-    "storybookjs",
     "storybook",
+    "storybookjs",
     "addons",
     "addon",
     "sort",
