@@ -53,7 +53,7 @@ export const parameters = {
 
 ### Version 2
 
-The version `storybook-multilevel-sort` package in `package.json` needs to be increased:
+The version of `storybook-multilevel-sort` package in `package.json` needs to be increased:
 
 ```json
 "devDependencies": {

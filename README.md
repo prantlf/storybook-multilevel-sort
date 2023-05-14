@@ -46,7 +46,7 @@ Can be sorted according to this request:
 3. `With Search` right after `Default` and before the others
 4. Otherwise alphabetically
 
-Resulting in a TOC like this:
+Resulting in a TOC like this. The "Docs" chapters are inserted by Storybook 7 instead of the "Docs" tab. If you want to change their order, see [Type Sort Order and Grouping](#type-sort-order-and-grouping) below:
 
 ```txt
 Articles
@@ -54,18 +54,22 @@ Articles
   Versioning
 Elements
   Button
+    Docs
     Default
     Active
   Link
+    Docs
     Default
     Active
 Components
   Header
+    Docs
     Default
     With Search
     Collapsed
     Expanded
   List
+    Docs
     Default
     Collapsed
     Expanded
