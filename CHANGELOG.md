@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.2.1...v2.0.0) (2023-05-14)
+
+
+### Features
+
+* Support Storybook 7 and docs pages ([#10](https://github.com/prantlf/storybook-multilevel-sort/issues/10)) ([1065337](https://github.com/prantlf/storybook-multilevel-sort/commit/10653377d94d46763e3c0885bc2386bf42a5d8d2))
+
+
+### BREAKING CHANGES
+
+* Only Storybook 7 is supported. If you use Storybook 6 or older, stay with the versions 1.x. Also, the minimum supported version of Node.js is 16. Except for the version requirements, the configuration of the custom sorting needs to be specified by a different interface. See the documentation about migration for more information.
+
 # [2.0.0-next.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.2.0...v2.0.0-next.0) (2023-05-07)
 
 ### Features
