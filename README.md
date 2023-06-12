@@ -1,6 +1,6 @@
 # Multi-level Sorting for Storybook
 
-[![Latest version](https://img.shields.io/npm/v/storybook-multilevel-sort) ![Dependency status](https://img.shields.io/librariesio/release/npm/storybook-multilevel-sort)](https://www.npmjs.com/package/storybook-multilevel-sort) [![Test Coverage](https://codecov.io/gh/prantlf/storybook-multilevel-sort/branch/master/graph/badge.svg)](https://codecov.io/gh/prantlf/storybook-multilevel-sort)
+[![Latest version](https://img.shields.io/npm/v/storybook-multilevel-sort)](https://www.npmjs.com/package/storybook-multilevel-sort) [![Dependency status](https://img.shields.io/librariesio/release/npm/storybook-multilevel-sort)](https://www.npmjs.com/package/storybook-multilevel-sort) [![Test Coverage](https://codecov.io/gh/prantlf/storybook-multilevel-sort/branch/master/graph/badge.svg)](https://codecov.io/gh/prantlf/storybook-multilevel-sort)
 
 Applies specific sort order to more than two levels of chapters and stories in a [storybook].
 
