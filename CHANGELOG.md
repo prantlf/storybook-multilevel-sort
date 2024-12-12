@@ -1,3 +1,9 @@
+# [2.0.1](https://github.com/prantlf/storybook-multilevel-sort/compare/v2.0.0...v2.0.1) (2024-12-12)
+
+## Bug Fixes
+
+* Sort properly if not every story group contains autodocs story ([fbd0f65](https://github.com/prantlf/storybook-multilevel-sort/commit/fbd0f6504a7d1fb2c6e22a762e2537aa2750f615))
+
 # [2.0.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.2.1...v2.0.0) (2023-05-14)
 
 
