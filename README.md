@@ -43,7 +43,7 @@ Can be sorted according to this request:
 3. `With Search` right after `Default` and before the others
 4. Otherwise alphabetically
 
-Resulting in a TOC like this. The "Docs" chapters are inserted by Storybook 7 instead of the "Docs" tab. If you want to change their order, see [Type Sort Order and Grouping](#type-sort-order-and-grouping) below:
+Resulting in a TOC like this. The "Docs" chapters are inserted by Storybook 7 or newer instead of the "Docs" tab. If you want to change their order, see [Type Sort Order and Grouping](#type-sort-order-and-grouping) below:
 
 ```txt
 Articles
@@ -325,9 +325,9 @@ Storybook inserts the links to the "Docs" pages before the first story of a part
 }
 ```
 
-The order of types in he array will be the order of the page groups. If you specify just one type, `['docs']` or `['story']`, pages of this type will be grouped toghether at the beginning and all other pages will follow behind them, regardless of their type, sorted only by their names.
+The order of types in the array will be the order of the page groups. If you specify just one type, `['docs']` or `['story']`, pages of this type will be grouped together at the beginning and all other pages will follow behind them, regardless of their type, sorted only by their names.
 
-If you want to handle the `docs` pages like any other stories and sort all the pages only by their names, you can pass an empty array to `typeOrder` to disable the gouping by type:
+If you want to handle the `docs` pages like any other stories and sort all the pages only by their names, you can pass an empty array to `typeOrder` to disable the grouping by type:
 
 ```js
 {
@@ -423,7 +423,7 @@ Licensed under the [Icon Free License (with attribution)](./docs/icon-license.pd
 [storybook]: https://storybook.js.org/
 [sorting configuration supported by Storybook]: https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
 [algorithm how Storybook generates the names of stories]: https://storybook.js.org/docs/react/api/csf#named-story-exports
-[example of a Storybook project using this package]: ./example
+[example of a Storybook project using this package]: ./examples/sb8-autodocs-all
 [versions `1.x` of this package]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x#readme
 [open issue]: https://github.com/prantlf/storybook-multilevel-sort/issues/8#issuecomment-1537507235
 [documentation about how to migrate]: ./docs/MIGRATION.md

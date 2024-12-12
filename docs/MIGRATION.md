@@ -101,4 +101,4 @@ export default {
 Later changes to customising the sorting will be made only in `.storybook/main.js`.
 
 [configuration version 1]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x/example/.storybook
-[configuration version 2]: https://github.com/prantlf/storybook-multilevel-sort/tree/master/example/.storybook
+[configuration version 2]: https://github.com/prantlf/storybook-multilevel-sort/tree/master/examples/sb8-autodocs-all/.storybook

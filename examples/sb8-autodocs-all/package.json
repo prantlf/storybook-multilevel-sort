@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "storybook dev -p 6006",
+    "test": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-mdx-gfm": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/html": "^8.4.7",
+    "@storybook/html-vite": "^8.4.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.4.7",
+    "storybook-multilevel-sort": "file:.."
+  }
+}

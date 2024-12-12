@@ -5,14 +5,14 @@
     "test": "storybook build"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.11",
-    "@storybook/addon-mdx-gfm": "^7.0.11",
-    "@storybook/blocks": "^7.0.11",
-    "@storybook/html": "^7.0.11",
-    "@storybook/html-vite": "^7.0.11",
+    "@storybook/addon-essentials": "^7.6.20",
+    "@storybook/addon-mdx-gfm": "^7.6.20",
+    "@storybook/blocks": "^7.6.20",
+    "@storybook/html": "^7.6.20",
+    "@storybook/html-vite": "^7.6.20",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "storybook": "^7.0.11",
+    "storybook": "^7.6.20",
     "storybook-multilevel-sort": "file:.."
   }
 }

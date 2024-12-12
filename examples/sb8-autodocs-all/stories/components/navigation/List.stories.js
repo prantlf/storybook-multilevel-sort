@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Navigation/Header'
+  title: 'Components/Navigation/List'
 }
 
 const Template = ({ label }) => {
@@ -8,20 +8,15 @@ const Template = ({ label }) => {
 
 export const Collapsed = Template.bind({})
 Collapsed.args = {
-  label: 'Collapsed Header'
+  label: 'Collapsed List'
 }
 
 export const Default = Template.bind({})
 Default.args = {
-  label: 'Default Header'
+  label: 'Default List'
 }
 
 export const Expanded = Template.bind({})
 Expanded.args = {
-  label: 'Expanded Header'
-}
-
-export const WithSearch = Template.bind({})
-WithSearch.args = {
-  label: 'Header With Search'
+  label: 'Expanded List'
 }
