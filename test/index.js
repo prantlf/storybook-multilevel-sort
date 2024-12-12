@@ -232,7 +232,7 @@ test('puts docs before stories by default', () => {
   strictEqual(compareStories(null, story, docs), 1)
 })
 
-test('puts docs before only if the stories are in the sdame group', () => {
+test('puts docs before other story types only if the stories are in the same group', () => {
   const docs = { title: 'Group 2', name: 'Docs', type: 'docs' }
   const story = { title: 'Group 1', name: 'Story', type: 'story' }
   strictEqual(compareStories(null, docs, story), 1)
