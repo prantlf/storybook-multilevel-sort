@@ -1,5 +1,5 @@
 import {
-  compareStories, configureSort, storySort, CompareResult
+  compareStories, configureSort, storySort, type CompareResult
 } from 'storybook-multilevel-sort'
 
 compareStories({}, {}, {})

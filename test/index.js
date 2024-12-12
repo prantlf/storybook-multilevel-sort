@@ -1,4 +1,4 @@
-import { ok, strictEqual, throws } from 'assert'
+import { ok, strictEqual, throws } from 'node:assert'
 import tehanu from 'tehanu'
 import { compareStories, configureSort, storySort } from '../lib/index.js'
 
