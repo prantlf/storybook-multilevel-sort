@@ -4,7 +4,7 @@
 
 Applies specific sort order to more than two levels of chapters and stories in a [storybook].
 
-**Attention**: Versions `2.x` of this package will support Storybook 7 only. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. If you upgrade Storybook to the version 7, you will need a version `2.x` of this package too. See the [documentation about how to migrate] from a version `1.x` to a version `2.x` of this package.
+**Attention**: Versions `2.x` of this package support Storybook 7 and newer. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. If you upgrade Storybook to the version 7 or newer, you will need a version `2.x` of this package too. See the [documentation about how to migrate] from a version `1.x` to a version `2.x` of this package.
 
 See also an [example of a Storybook project using this package].
 
@@ -414,7 +414,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright (c) 2022-2023 Ferdinand Prantl<br>
+Copyright (c) 2022-2024 Ferdinand Prantl<br>
 Licensed under the MIT license.
 
 Sort icons created by [Freepik - Flaticon](https://www.flaticon.com/free-icon/sort_1707647?term=sort&related_id=1707647)<br>
