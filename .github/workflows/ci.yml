@@ -1,11 +1,18 @@
-name: Test or Release
+name: Test and Release
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - '**'
+    paths-ignore:
+      - '**/*.md'
+      - LICENSE
+  pull_request:
 
 jobs:
-  test-or-release:
+  test-and-release:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
