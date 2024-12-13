@@ -13,6 +13,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "storybook": "^8.4.7",
-    "storybook-multilevel-sort": "file:.."
+    "storybook-multilevel-sort": "file:../.."
   }
 }
