@@ -73,7 +73,7 @@ export interface CompareOptions {
    * pages of other types.
    *
    * The default behaviour is to place all documentation pages (type `docs`)
-   * before all stories (type `docs`) and then all other pages ungrouped.
+   * before all stories (type `story`) and then all other pages ungrouped.
    * An asterisk (`*`) represents any type and can be used for moving a group
    * of pages of a specific type behind pages of any other types.
    *
@@ -119,7 +119,7 @@ export interface SortOptions {
    * pages of other types.
    *
    * The default behaviour is to place all documentation pages (type `docs`)
-   * before all stories (type `docs`) and then all other pages ungrouped.
+   * before all stories (type `story`) and then all other pages ungrouped.
    * An asterisk (`*`) represents any type and can be used for moving a group
    * of pages of a specific type behind pages of any other types.
    *
