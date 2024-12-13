@@ -5,13 +5,13 @@ Choose the version of this package according the the version of Storybook that y
 | Version of this package | Supported Storybook version |
 |-------------------------|-----------------------------|
 | ^1                      | <=6                         |
-| ^2                      | ^7                          |
+| ^2                      | ^7, ^8, probably newer too  |
 
 Read the migration chapter according to the old and new version of this package that you're going to upgrade to.
 
 ## Migration from 1.x to 2.x
 
-When you upgrade Storybook 6 to 7, you will need to install a version 2 of this package and migrate the configuration of the custom sorting. The instructions below show how to start with the [configuration version 1] and end with the [configuration version 2].
+When you upgrade Storybook 6 to 7 or newer, you will need to install a version 2 of this package and migrate the configuration of the custom sorting. The instructions below show how to start with the [configuration version 1] and end with the [configuration version 2].
 
 ### Version 1
 
