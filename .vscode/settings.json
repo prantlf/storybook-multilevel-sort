@@ -9,6 +9,7 @@
     "**/coverage": true,
     "**/node_modules": true,
     "**/storybook-static": true,
+    "**/*.map": true,
     "/lib/index.cjs": true
   },
   "mdx.experimentalLanguageServer": true

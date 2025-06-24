@@ -6,7 +6,11 @@ Applies specific sort order to more than two levels of chapters and stories in a
 
 **Attention**: Versions `2.x` of this package support Storybook 7 and newer. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. If you upgrade Storybook to the version 7 or newer, you will need a version `2.x` of this package too. See the [documentation about how to migrate] from a version `1.x` to a version `2.x` of this package.
 
-See also an [example of a Storybook project using this package].
+See also a examples of Storybook projects using this package:
+
+* [for Storybook 7]
+* [for Storybook 8]
+* [for Storybook 9]
 
 ## Synopsis
 
@@ -423,7 +427,9 @@ Licensed under the [Icon Free License (with attribution)](./docs/icon-license.pd
 [storybook]: https://storybook.js.org/
 [sorting configuration supported by Storybook]: https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
 [algorithm how Storybook generates the names of stories]: https://storybook.js.org/docs/react/api/csf#named-story-exports
-[example of a Storybook project using this package]: ./examples/sb8-autodocs-all
+[for Storybook 7]: ./examples/sb7-autodocs-one
+[for Storybook 8]: ./examples/sb8-autodocs-all
+[for Storybook 9]: ./examples/sb9
 [versions `1.x` of this package]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x#readme
 [open issue]: https://github.com/prantlf/storybook-multilevel-sort/issues/8#issuecomment-1537507235
 [documentation about how to migrate]: ./docs/MIGRATION.md

@@ -57,14 +57,14 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.5",
     "c8": "^10.1.3",
-    "rollup": "^4.28.1",
+    "rollup": "^4.44.0",
     "storybook-multilevel-sort": "link:",
     "tehanu": "^1.0.1",
     "tehanu-repo-coco": "^1.0.1",
     "tehanu-teru": "^1.0.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.8.3"
   },
   "keywords": [
     "storybook-addons",

@@ -1,4 +1,3 @@
-// biome-ignore lint/performance/noDelete: this tests missing hasOwn
 delete Object.hasOwn // simulate older browsers
 
 const { strictEqual } = require('node:assert')
