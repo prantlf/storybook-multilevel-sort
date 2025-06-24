@@ -414,7 +414,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright (c) 2022-2024 Ferdinand Prantl<br>
+Copyright (c) 2022-2025 Ferdinand Prantl<br>
 Licensed under the MIT license.
 
 Sort icons created by [Freepik - Flaticon](https://www.flaticon.com/free-icon/sort_1707647?term=sort&related_id=1707647)<br>
