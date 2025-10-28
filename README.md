@@ -8,9 +8,10 @@ Applies specific sort order to more than two levels of chapters and stories in a
 
 See also a examples of Storybook projects using this package:
 
-* [for Storybook 7]
-* [for Storybook 8]
+* [for Storybook 10]
 * [for Storybook 9]
+* [for Storybook 8]
+* [for Storybook 7]
 
 ## Synopsis
 
@@ -430,6 +431,7 @@ Licensed under the [Icon Free License (with attribution)](./docs/icon-license.pd
 [for Storybook 7]: ./examples/sb7-autodocs-one
 [for Storybook 8]: ./examples/sb8-autodocs-all
 [for Storybook 9]: ./examples/sb9
+[for Storybook 10]: ./examples/sb10
 [versions `1.x` of this package]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x#readme
 [open issue]: https://github.com/prantlf/storybook-multilevel-sort/issues/8#issuecomment-1537507235
 [documentation about how to migrate]: ./docs/MIGRATION.md
