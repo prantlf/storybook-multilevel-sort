@@ -1,3 +1,5 @@
+# Changes
+
 # [2.0.1](https://github.com/prantlf/storybook-multilevel-sort/compare/v2.0.0...v2.0.1) (2024-12-12)
 
 ## Bug Fixes
@@ -6,11 +8,9 @@
 
 # [2.0.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v1.2.1...v2.0.0) (2023-05-14)
 
-
 ### Features
 
 * Support Storybook 7 and docs pages ([#10](https://github.com/prantlf/storybook-multilevel-sort/issues/10)) ([1065337](https://github.com/prantlf/storybook-multilevel-sort/commit/10653377d94d46763e3c0885bc2386bf42a5d8d2))
-
 
 ### BREAKING CHANGES
 
