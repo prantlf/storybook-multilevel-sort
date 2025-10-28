@@ -1,5 +1,11 @@
 # Changes
 
+# [2.0.2](https://github.com/prantlf/storybook-multilevel-sort/compare/v2.0.1...v2.0.2) (2025-10-28)
+
+## Bug Fixes
+
+* Upgrade dev dependencies ([ac22c75](https://github.com/prantlf/storybook-multilevel-sort/commit/ac22c75e02576e5f020f59fe65bd044a264f9dce))
+
 # [2.0.1](https://github.com/prantlf/storybook-multilevel-sort/compare/v2.0.0...v2.0.1) (2024-12-12)
 
 ## Bug Fixes
