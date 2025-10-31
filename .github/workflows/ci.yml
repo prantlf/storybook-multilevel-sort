@@ -25,10 +25,9 @@ jobs:
         version: latest
     - uses: actions/setup-node@v5
       with:
-        node-version: 24
+        node-version: 'lts/*'
         registry-url: 'https://registry.npmjs.org'
         cache: 'pnpm'
-    - run: npm i -g npm
     - run: pnpm i --frozen-lockfile --no-verify-store-integrity
     - run: npm test
     - uses: codecov/codecov-action@v4
