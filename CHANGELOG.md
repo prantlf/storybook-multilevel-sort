@@ -1,5 +1,11 @@
 # Changes
 
+# [2.1.0](https://github.com/prantlf/storybook-multilevel-sort/compare/v2.0.2...v2.1.0) (2025-10-31)
+
+## Features
+
+* Add example for Storybook 10 ([5a8d08d](https://github.com/prantlf/storybook-multilevel-sort/commit/5a8d08d4bd70aff6d9924dac44a8c49663caf854))
+
 # [2.0.2](https://github.com/prantlf/storybook-multilevel-sort/compare/v2.0.1...v2.0.2) (2025-10-28)
 
 ## Bug Fixes
