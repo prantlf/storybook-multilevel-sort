@@ -19,18 +19,20 @@ jobs:
   test-and-release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
-    - uses: pnpm/action-setup@v4
+    - uses: actions/checkout@v7
+    - uses: pnpm/action-setup@v6
       with:
         version: latest
-    - uses: actions/setup-node@v5
+        cache: true
+    - uses: actions/setup-node@v7
       with:
         node-version: 'lts/*'
         registry-url: 'https://registry.npmjs.org'
         cache: 'pnpm'
-    - run: pnpm i --frozen-lockfile --no-verify-store-integrity
+    - run: pnpm ci
+    - run: npm run build
     - run: npm test
-    - uses: codecov/codecov-action@v4
+    - uses: codecov/codecov-action@v7
       if: ${{ github.ref_name == 'master' }}
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
