@@ -5,9 +5,9 @@
     "test": "storybook build"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^10.0.2",
-    "@storybook/html-vite": "^10.0.2",
-    "storybook": "^10.0.2",
+    "@storybook/addon-docs": "^10.6.0",
+    "@storybook/html-vite": "^10.6.0",
+    "storybook": "^10.6.0",
     "storybook-multilevel-sort": "file:../.."
   }
 }
