@@ -1,13 +1,12 @@
 # Multi-level Sorting for Storybook
 
-[![Latest version](https://img.shields.io/npm/v/storybook-multilevel-sort)](https://www.npmjs.com/package/storybook-multilevel-sort) [![Dependency status](https://img.shields.io/librariesio/release/npm/storybook-multilevel-sort)](https://www.npmjs.com/package/storybook-multilevel-sort) [![Test Coverage](https://codecov.io/gh/prantlf/storybook-multilevel-sort/branch/master/graph/badge.svg)](https://codecov.io/gh/prantlf/storybook-multilevel-sort)
-
 Applies specific sort order to more than two levels of chapters and stories in a [storybook].
 
 **Attention**: Versions `2.x` of this package support Storybook 7 and newer. If you use Storybook 6 or older, look for the [versions `1.x` of this package]. If you upgrade Storybook to the version 7 or newer, you will need a version `2.x` of this package too. See the [documentation about how to migrate] from a version `1.x` to a version `2.x` of this package.
 
 See also a examples of Storybook projects using this package:
 
+* [for Storybook 11]
 * [for Storybook 10]
 * [for Storybook 9]
 * [for Storybook 8]
@@ -432,6 +431,7 @@ Licensed under the [Icon Free License (with attribution)](./docs/icon-license.pd
 [for Storybook 8]: ./examples/sb8-autodocs-all
 [for Storybook 9]: ./examples/sb9
 [for Storybook 10]: ./examples/sb10
+[for Storybook 11]: ./examples/sb11
 [versions `1.x` of this package]: https://github.com/prantlf/storybook-multilevel-sort/tree/v1.x#readme
 [open issue]: https://github.com/prantlf/storybook-multilevel-sort/issues/8#issuecomment-1537507235
 [documentation about how to migrate]: ./docs/MIGRATION.md
